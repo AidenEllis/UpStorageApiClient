@@ -17,10 +17,10 @@ class UpStorageBucket:
             'x-api-key': str(self.api_key)
         }
 
-    def upload(self, file_path, is_private=False):
+    def upload(self, file, is_private=False):
         """
         Uploads File To UpStorage Server Using Their Api.
-        :param file_path: path of the file that you want to send
+        :param file: file that you want to send
         :param is_private: Value of File Model of Upstorage [private, public] (default: False)
         :return: This Will Return The Url Of The File.
         """
@@ -28,7 +28,7 @@ class UpStorageBucket:
         headers = self.auth_header
 
         files = {
-            'file': open(file_path, 'rb')
+            'file': file
         }
 
         data = {

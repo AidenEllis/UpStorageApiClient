@@ -31,7 +31,7 @@ setup(
     install_requires=['requests'],
     keywords=['python', 'storage', 'api', 'upstorage', 'UpStorageApiClient'],
     classifiers=[
-        "Development Status :: 1 - Planning",
+        "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "Programming Language :: Python :: 3",
         "Operating System :: Unix",
