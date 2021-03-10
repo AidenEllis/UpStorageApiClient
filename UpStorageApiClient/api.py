@@ -10,6 +10,7 @@ class UpStorageBucket:
         self.api_host = 'http://127.0.0.1:8000'
         self.upload_url = f'{self.api_host}/api/storage/upload/'
         self.file_list_url = f'{self.api_host}/api/storage/file/all/'
+        self.file_delete_url = f'{self.api_host}/api/storage/delete/'
         self.auth_token = auth_token
         self.api_key = api_key
         self.auth_header = {
@@ -49,6 +50,20 @@ class UpStorageBucket:
         headers = self.auth_header
 
         response = requests.get(self.file_list_url, headers=headers)
+        if self.validate_response(response):
+            return response.json()
+
+    def delete(self, file_name):
+        """
+        deletes file from UpStorage Bucket
+        :param file_name:
+        :return:
+        """
+        url = f"{self.file_delete_url}{file_name}"
+        header = self.auth_header
+
+        response = requests.post(url, headers=header)
+
         if self.validate_response(response):
             return response.json()
 
