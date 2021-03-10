@@ -65,7 +65,7 @@ class UpStorageBucket:
         response = requests.post(url, headers=header)
 
         if self.validate_response(response):
-            return response.json()
+            return 'DELETED'
 
     @staticmethod
     def validate_response(response):
