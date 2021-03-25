@@ -7,7 +7,7 @@ class UpStorageBucket:
     """
 
     def __init__(self, auth_token, api_key):
-        self.api_host = 'http://127.0.0.1:8000'
+        self.api_host = 'https://upstorage.pythonanywhere.com'
         self.upload_url = f'{self.api_host}/api/storage/upload/'
         self.file_list_url = f'{self.api_host}/api/storage/file/all/'
         self.file_delete_url = f'{self.api_host}/api/storage/delete/'
